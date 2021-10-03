@@ -50,6 +50,7 @@ class MainRecyclerView : RecyclerView.Adapter<MainRecyclerView.MyViewHolder>() {
         holder.bind(book)
     }
 
+
     override fun getItemCount(): Int {
         return list.size
     }
