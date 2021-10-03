@@ -1,3 +1,25 @@
 <resources>
     <string name="app_name">Book Store</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_welecome">FullscreenActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="snackbar_action">Action.</string>
+    <string name="Home">Home</string>
+    <string name="Shop">Shop</string>
+    <string name="Account">Account</string>
+    <string name="Basket">Basket</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="do_you_have_not_any_account">do you have not any account?</string>
+    <string name="registration">Registration</string>
+    <string name="full_name">Full name</string>
+    <string name="enter_your_email">Enter your email</string>
+    <string name="enter_your_password">Enter your password</string>
+    <string name="welcome">Welcome!</string>
+    <string name="book_store">Book Store</string>
+    <string name="clean_code">Clean Code</string>
+    <string name="ahmed_kamal">Ahmed Kamal</string>
 </resources>

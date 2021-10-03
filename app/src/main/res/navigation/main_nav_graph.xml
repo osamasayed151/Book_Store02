@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/mainFragment">
+    <fragment
+        android:id="@+id/basketFragment"
+        android:name="com.example.bookstore.BasketFragment"
+        android:label="fragment_basket"
+        tools:layout="@layout/fragment_basket" >
+
+        <action
+            android:id="@+id/action_basketFragment_to_accountFragment"
+            app:destination="@id/accountFragment"
+            app:enterAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"/>
+    </fragment>
+    <fragment
+        android:id="@+id/accountFragment"
+        android:name="com.example.bookstore.AccountFragment"
+        android:label="fragment_account"
+        tools:layout="@layout/fragment_account" />
+    <fragment
+        android:id="@+id/myFavouriteFragment"
+        android:name="com.example.bookstore.MyFavouriteFragment"
+        android:label="fragment_my_favourite"
+        tools:layout="@layout/fragment_my_favourite" />
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.bookstore.ui.MainViewModel.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+
+        <action
+            android:id="@+id/action_mainFragment_to_basketFragment"
+            app:destination="@id/basketFragment"
+            app:enterAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left" />
+    </fragment>
+</navigation>
