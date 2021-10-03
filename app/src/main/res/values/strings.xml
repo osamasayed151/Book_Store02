@@ -12,8 +12,8 @@
     <string name="Basket">Basket</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
-    <string name="login">Login</string>
-    <string name="do_you_have_not_any_account">do you have not any account?</string>
+    <string name="login">Log in</string>
+    <string name="do_you_have_not_any_account">Do you have not an account?</string>
     <string name="registration">Registration</string>
     <string name="full_name">Full name</string>
     <string name="enter_your_email">Enter your email</string>
@@ -22,4 +22,6 @@
     <string name="book_store">Book Store</string>
     <string name="clean_code">Clean Code</string>
     <string name="ahmed_kamal">Ahmed Kamal</string>
+    <string name="enter_your_phone">Enter your phone</string>
+    <string name="cancel">Cancel</string>
 </resources>

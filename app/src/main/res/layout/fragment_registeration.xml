@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal"
+    android:padding="10dp"
     tools:context=".ui.RegistrationViewModel.RegistrationFragment">
 
     <ImageView
@@ -29,6 +29,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
         app:startIconDrawable="@drawable/ic_person_24">
+
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/registration_username"
             android:layout_width="match_parent"
@@ -43,12 +44,13 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:endIconMode="clear_text"
         android:layout_marginTop="5dp"
+        app:endIconMode="clear_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/TextInputLayout_name"
         app:startIconDrawable="@drawable/ic_email_24">
+
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/registration_email"
             android:layout_width="match_parent"
@@ -64,18 +66,19 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:endIconMode="clear_text"
         android:layout_marginTop="5dp"
+        app:endIconMode="clear_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/TextInputLayout_email"
         app:startIconDrawable="@drawable/ic_baseline_local_phone_24">
+
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/registration_phone"
             android:layout_width="match_parent"
-            android:inputType="phone"
             android:layout_height="wrap_content"
-            android:hint="@string/enter_your_email"
+            android:hint="@string/enter_your_phone"
+            android:inputType="phone"
             app:layout_constraintTop_toBottomOf="@+id/imageView"
             tools:layout_editor_absoluteX="0dp" />
 
@@ -86,12 +89,13 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:endIconMode="password_toggle"
         android:layout_marginTop="5dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/TextInputLayout_phone"
+        app:passwordToggleEnabled="true"
         app:startIconDrawable="@drawable/ic_lock_24">
+
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/registration_password"
             android:layout_width="match_parent"
@@ -106,13 +110,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
-        android:text="@string/registration"
         android:padding="10dp"
+        android:text="@string/registration"
+        android:textAllCaps="false"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/TextInputLayout_password"
-        android:textAllCaps="false"
-        android:textSize="20sp"/>
+        app:layout_constraintTop_toBottomOf="@id/TextInputLayout_password" />
 
     <ProgressBar
         android:id="@+id/registration_progressBar"
@@ -125,5 +129,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/registration_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="52dp"
+        android:text="@string/cancel"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/registration_Registration"
+        app:layout_constraintVertical_bias="0.896" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
