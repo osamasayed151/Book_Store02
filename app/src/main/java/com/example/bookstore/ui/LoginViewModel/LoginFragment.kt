@@ -19,7 +19,7 @@ import com.google.android.material.snackbar.Snackbar
 
 class LoginFragment : Fragment() {
 
-    private var tokenLogin: String? = null
+    var tokenLogin: String? = null
     private var statusLogin: Boolean? = null
     private lateinit var binding: FragmentLoginBinding
     private lateinit var loginViewModel: LoginViewModel
@@ -48,7 +48,7 @@ class LoginFragment : Fragment() {
                 if (it != null && it.status) {
                     tokenLogin = it.data.token
                     statusLogin = true
-                    saveData()
+                    saveData(tokenLogin.toString())
                     binding.loginProgressBar.visibility = View.GONE
                     startActivity(Intent(context, MainActivity::class.java))
                 } else {
@@ -74,10 +74,13 @@ class LoginFragment : Fragment() {
         binding.loginProgressBar.visibility = View.VISIBLE
     }
 
-    fun saveData(){
+    fun saveData(token: String){
         val sharedPreferences = requireActivity().applicationContext.getSharedPreferences("SaveData", Context.MODE_PRIVATE)
         val editor = sharedPreferences.edit()
-        editor.apply { putBoolean("STATUS_LOGIN", statusLogin!!) }.apply()
+        editor.apply {
+            putString("TOKENLOGIN",token)
+            putBoolean("STATUS_LOGIN", statusLogin!!)
+        }.apply()
     }
 
 }

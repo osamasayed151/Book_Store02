@@ -7,7 +7,10 @@ class Data{
     var name: String? = null
     var phone: String? = null
     var token: String? = null
+    var points: Int? = null
+    var credit: Int? = null
     var password: String? = null
+
 
     constructor(id:Int,email:String,image:String,name:String,phone:String,token:String){
         this.id =id
