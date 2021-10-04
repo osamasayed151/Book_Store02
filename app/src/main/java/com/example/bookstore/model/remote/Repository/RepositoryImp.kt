@@ -1,7 +1,8 @@
 package com.example.bookstore.model.remote.Repository
 
 import com.example.bookstore.model.data.BookShopItem
-import com.example.bookstore.model.data.RegistrationItem
+import com.example.bookstore.model.data.Data
+import com.example.bookstore.model.data.User
 import com.example.bookstore.model.remote.BookShopAPI
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -15,11 +16,28 @@ class RepositoryImp(var api: BookShopAPI) : ServiceAPI {
         }
     }
 
-    override suspend fun loginUser(email: String, password: String) = withContext(Dispatchers.IO) {
-        api.loginUser(email,password)
+    override suspend fun getProfile(authorization: String): Response<User> {
+        return withContext(Dispatchers.IO){
+            api.getProfile(authorization)
+        }
     }
 
-    override suspend fun registrationUser(registrationItem: RegistrationItem) = withContext(Dispatchers.IO){
-        api.registrationUser(registrationItem)
+    override suspend fun postRegister(data: Data): Response<User>{
+        return withContext(Dispatchers.IO){
+            api.postRegister(data)
+        }
     }
+
+    override suspend fun postLogin(data: Data): Response<User> {
+        return withContext(Dispatchers.IO){
+            api.postLogin(data)
+        }
+    }
+
+    override suspend fun postLogout(authorization: String): Response<User> {
+        return withContext(Dispatchers.IO){
+            api.postLogout(authorization)
+        }
+    }
+
 }

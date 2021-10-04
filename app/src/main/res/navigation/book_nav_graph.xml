@@ -23,10 +23,14 @@
         android:id="@+id/registeationFragment"
         android:name="com.example.bookstore.ui.RegistrationViewModel.RegistrationFragment"
         android:label="fragment_registeration"
-        tools:layout="@layout/fragment_registeration"/>
+        tools:layout="@layout/fragment_registeration">
+        <action
+            android:id="@+id/action_registeationFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
     <fragment
         android:id="@+id/splashFragment"
-        android:name="com.example.bookstore.SplashFragment"
+        android:name="com.example.bookstore.ui.WelcomeFragment.SplashFragment"
         android:label="fragment Splash"
         tools:layout="@layout/fragment_splash">
         <action

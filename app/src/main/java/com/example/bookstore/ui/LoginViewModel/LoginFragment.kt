@@ -1,25 +1,26 @@
 package com.example.bookstore.ui.LoginViewModel
 
+import android.annotation.SuppressLint
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
-import androidx.core.view.WindowCompat
-import androidx.core.view.WindowInsetsCompat
-import androidx.core.view.WindowInsetsControllerCompat
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.bookstore.R
 import com.example.bookstore.databinding.FragmentLoginBinding
+import com.example.bookstore.model.data.Data
 import com.example.bookstore.ui.Activities.MainActivity
 import com.google.android.material.snackbar.Snackbar
 
 class LoginFragment : Fragment() {
 
+    private var tokenLogin: String? = null
+    private var statusLogin: Boolean? = null
     private lateinit var binding: FragmentLoginBinding
     private lateinit var loginViewModel: LoginViewModel
 
@@ -29,9 +30,9 @@ class LoginFragment : Fragment() {
     }
 
     override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
+            inflater: LayoutInflater,
+            container: ViewGroup?,
+            savedInstanceState: Bundle?
     ): View {
         binding = FragmentLoginBinding.inflate(inflater, container, false)
         return binding.root
@@ -42,44 +43,41 @@ class LoginFragment : Fragment() {
         loginViewModel = ViewModelProvider(requireActivity()).get(LoginViewModel::class.java)
 
         binding.loginLogin.setOnClickListener {
-
-            startActivity(Intent(context, MainActivity::class.java))
-
+            user()
             loginViewModel.loginUserLiveData.observe(viewLifecycleOwner, {
-                if (it != null) {
-                    Snackbar.make(binding.loginLogin, "Successful",Snackbar.LENGTH_LONG).show()
+                if (it != null && it.status) {
+                    tokenLogin = it.data.token
+                    statusLogin = true
+                    saveData()
                     binding.loginProgressBar.visibility = View.GONE
-
+                    startActivity(Intent(context, MainActivity::class.java))
                 } else {
-                    Snackbar.make(binding.loginLogin, "Error",Snackbar.LENGTH_LONG).show()
+                    if (it != null) {
+                        binding.loginProgressBar.visibility = View.GONE
+                        Snackbar.make(binding.loginLogin, it.message, Snackbar.LENGTH_LONG).show()
+                    }
                 }
             })
-
         }
 
         binding.loginRegistration.setOnClickListener {
             findNavController().navigate(R.id.action_loginFragment_to_registrationFragment)
         }
-
-        binding.sss.setOnClickListener {
-            // Snack bar
-            Snackbar.make(binding.loginPassword, "No connection", Snackbar.LENGTH_LONG)
-                .setAction(R.string.snackbar_action) {
-                    findNavController().navigate(R.id.action_loginFragment_to_registrationFragment)
-                }.show()
-
-
+        binding.loginCancel.setOnClickListener {
+            // not register
+            startActivity(Intent(context, MainActivity::class.java))
         }
-
-
     }
 
     fun user() {
-        loginViewModel.loginUser(
-            binding.loginEmail.text.toString(),
-            binding.loginEmail.text.toString()
-        )
+        loginViewModel.loginUser(Data(binding.loginEmail.text.toString(), binding.loginPassword.text.toString()))
         binding.loginProgressBar.visibility = View.VISIBLE
+    }
+
+    fun saveData(){
+        val sharedPreferences = requireActivity().applicationContext.getSharedPreferences("SaveData", Context.MODE_PRIVATE)
+        val editor = sharedPreferences.edit()
+        editor.apply { putBoolean("STATUS_LOGIN", statusLogin!!) }.apply()
     }
 
 }

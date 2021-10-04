@@ -18,7 +18,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     val bookLiveData: LiveData<List<BookShopItem>> get() = bookMutableLiveData
 
     init {
-        val service = RemoteBuilder.builder().create(BookShopAPI::class.java)
+        val service = RemoteBuilder.builderBooks().create(BookShopAPI::class.java)
         repository = RepositoryImp(service)
     }
 

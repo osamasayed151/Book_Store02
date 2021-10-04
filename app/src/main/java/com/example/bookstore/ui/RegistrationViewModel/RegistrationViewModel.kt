@@ -2,11 +2,13 @@ package com.example.bookstore.ui.RegistrationViewModel
 
 import android.app.Application
 import android.util.Log
+import android.widget.Toast
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
-import com.example.bookstore.model.data.RegistrationItem
+import com.example.bookstore.model.data.Data
+import com.example.bookstore.model.data.User
 import com.example.bookstore.model.remote.BookShopAPI
 import com.example.bookstore.model.remote.RemoteBuilder
 import com.example.bookstore.model.remote.Repository.RepositoryImp
@@ -16,20 +18,22 @@ class RegistrationViewModel(application: Application) : AndroidViewModel(applica
 
     private val TAG: String = "tag"
     private var repositoryImp: RepositoryImp
-    private var postMutableLiveData = MutableLiveData<RegistrationItem>()
-    val postLiveData: LiveData<RegistrationItem> get() = postMutableLiveData
+    private var postMutableLiveData = MutableLiveData<User?>()
+    val postLiveData: LiveData<User?> get() = postMutableLiveData
 
     init {
-        val service = RemoteBuilder.builder().create(BookShopAPI::class.java)
+        val service = RemoteBuilder.builderLogin().create(BookShopAPI::class.java)
         repositoryImp = RepositoryImp(service)
     }
 
-    fun postUser(registration: RegistrationItem) = viewModelScope.launch {
-        val result = repositoryImp.registrationUser(registration)
-        if (result.body() != null && result.isSuccessful) {
-            postMutableLiveData.postValue(result.body())
-        }else{
-            Log.i(TAG, "postUser: Error")
+    fun postUser(data: Data) = viewModelScope.launch {
+        val result = repositoryImp.postRegister(data)
+        if (result.isSuccessful) {
+            if (result.body() != null) {
+                postMutableLiveData.postValue(result.body())
+            }
+        } else {
+            Log.i(TAG, "postUser: ${result.message()}")
         }
     }
 }

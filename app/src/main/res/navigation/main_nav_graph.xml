@@ -6,7 +6,7 @@
     app:startDestination="@id/mainFragment">
     <fragment
         android:id="@+id/basketFragment"
-        android:name="com.example.bookstore.BasketFragment"
+        android:name="com.example.bookstore.ui.BasketFragment.BasketFragment"
         android:label="fragment_basket"
         tools:layout="@layout/fragment_basket" >
 
@@ -18,12 +18,12 @@
     </fragment>
     <fragment
         android:id="@+id/accountFragment"
-        android:name="com.example.bookstore.AccountFragment"
+        android:name="com.example.bookstore.ui.AccountFragment.AccountFragment"
         android:label="fragment_account"
         tools:layout="@layout/fragment_account" />
     <fragment
         android:id="@+id/myFavouriteFragment"
-        android:name="com.example.bookstore.MyFavouriteFragment"
+        android:name="com.example.bookstore.ui.FavouriteFragment.MyFavouriteFragment"
         android:label="fragment_my_favourite"
         tools:layout="@layout/fragment_my_favourite" />
     <fragment

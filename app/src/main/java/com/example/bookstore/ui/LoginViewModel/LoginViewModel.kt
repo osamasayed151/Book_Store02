@@ -6,7 +6,8 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
-import com.example.bookstore.model.data.RegistrationItem
+import com.example.bookstore.model.data.Data
+import com.example.bookstore.model.data.User
 import com.example.bookstore.model.remote.BookShopAPI
 import com.example.bookstore.model.remote.RemoteBuilder
 import com.example.bookstore.model.remote.Repository.RepositoryImp
@@ -18,20 +19,20 @@ class LoginViewModel(application: Application) : AndroidViewModel(application) {
     private val TAG: String= "tag"
     private var repository: RepositoryImp
 
-    private var loginUserMutableLiveData = MutableLiveData<RegistrationItem>()
-    val loginUserLiveData: LiveData<RegistrationItem> get() = loginUserMutableLiveData
+    private var loginUserMutableLiveData = MutableLiveData<User>()
+    val loginUserLiveData: LiveData<User> get() = loginUserMutableLiveData
 
     init {
-        val service = RemoteBuilder.builder().create(BookShopAPI::class.java)
+        val service = RemoteBuilder.builderLogin().create(BookShopAPI::class.java)
         repository = RepositoryImp(service)
     }
 
-    fun loginUser(email: String, password: String) = viewModelScope.launch {
-        val result = repository.loginUser(email,password)
+    fun loginUser(data: Data) = viewModelScope.launch {
+        val result = repository.postLogin(data)
         if (result.body() != null && result.isSuccessful){
             loginUserMutableLiveData.postValue(result.body())
         }else{
-            Log.i(TAG, "loginUser: Error")
+            Log.i(TAG, "loginUser: ${result.message()}")
         }
     }
 
