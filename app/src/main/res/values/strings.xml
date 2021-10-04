@@ -24,4 +24,12 @@
     <string name="ahmed_kamal">Ahmed Kamal</string>
     <string name="enter_your_phone">Enter your phone</string>
     <string name="cancel">Cancel</string>
+    <string name="logout">Logout</string>
+    <string name="about">About</string>
+    <string name="my_favourite">My Favourite</string>
+    <string name="change_password">Change Password</string>
+    <string name="language_setting">Language Setting</string>
+    <string name="account_profile">Account Profile</string>
+    <string name="osama_sayed">Osama sayed</string>
+    <string name="welcome_back">Welcome Back!</string>
 </resources>
