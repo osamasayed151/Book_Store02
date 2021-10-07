@@ -10,8 +10,8 @@ import retrofit2.http.*
 
 interface BookShopAPI {
 
-    @GET("bookshop")
-    suspend fun getAllBooks(): Response<List<BookShopItem>>
+    @GET("Novels")
+    suspend fun getNovels(): Response<List<BookShopItem>>
 
     @GET("profile")
     suspend fun getProfile(@Header("Authorization") authorization: String): Response<User>

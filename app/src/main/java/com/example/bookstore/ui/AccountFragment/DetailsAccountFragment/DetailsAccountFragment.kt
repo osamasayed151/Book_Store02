@@ -6,8 +6,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.lifecycle.ViewModelProvider
 import com.example.bookstore.databinding.FragmentDetailsAccountBinding
 import com.example.bookstore.ui.LoginViewModel.LoginFragment
+import com.example.bookstore.ui.LoginViewModel.LoginViewModel
 import com.google.android.material.snackbar.Snackbar
 
 
@@ -27,32 +30,30 @@ class DetailsAccountFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        detailsViewModel = ViewModelProvider(requireActivity()).get(DetailsViewModel::class.java)
         getData()
 
         detailsViewModel.profileUserLiveData.observe(viewLifecycleOwner, {
             if (it != null && it.status) {
-                binding.accountName.setText(it.data.name)
-                binding.accountEmail.setText(it.data.email)
-                binding.accountPhone.setText(it.data.phone)
-                binding.accountPoints.setText(it.data.points.toString())
-                binding.accountCredit.setText(it.data.credit.toString())
-                binding.AccountProgressBar.visibility = View.GONE
-
+                binding.detailsName.setText(it.data.name)
+                binding.detailsEmail.setText(it.data.email)
+                binding.detailsPhone.setText(it.data.phone)
+                binding.detailsPoints.setText(it.data.points.toString())
+                binding.detailsCredit.setText(it.data.credit.toString())
+                binding.detailsProgressBar.visibility = View.GONE
             } else {
-                binding.AccountProgressBar.visibility = View.GONE
-                Snackbar.make(binding.AccountImage, it.message, Snackbar.LENGTH_LONG).show()
+                binding.detailsProgressBar.visibility = View.GONE
+                Snackbar.make(binding.detailsImage, it.message, Snackbar.LENGTH_LONG).show()
             }
         })
     }
 
     fun getData() {
-        binding.AccountProgressBar.visibility = View.VISIBLE
         val sharedPreferences = requireActivity().applicationContext.getSharedPreferences("SaveData", Context.MODE_PRIVATE)
-       // val tokenLogin:String = sharedPreferences.getString("TOKENLOGIN", "no").toString()
-        val tok = LoginFragment()
-        // TODO: 04/10/2021  
-        detailsViewModel.getDataForUser(tok.tokenLogin.toString())
+        val token = sharedPreferences.getString("TOKENLOGIN","null").toString()
+        binding.detailsProgressBar.visibility = View.VISIBLE
+        detailsViewModel.getDataForUser(token)
+
 
     }
 

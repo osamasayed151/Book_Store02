@@ -10,9 +10,9 @@ import retrofit2.Response
 
 class RepositoryImp(var api: BookShopAPI) : ServiceAPI {
 
-    override suspend fun getAllBooks(): Response<List<BookShopItem>> {
+    override suspend fun getNovels(): Response<List<BookShopItem>> {
         return withContext(Dispatchers.IO) {
-            api.getAllBooks()
+            api.getNovels()
         }
     }
 

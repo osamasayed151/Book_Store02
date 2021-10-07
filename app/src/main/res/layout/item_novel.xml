@@ -3,84 +3,68 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:padding="4dp"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_margin="2dp">
-
-<!--    <androidx.cardview.widget.CardView-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:elevation="20dp"-->
-<!--        android:padding="8dp"-->
-<!--        app:cardBackgroundColor="#C1C8EF"-->
-<!--        app:cardCornerRadius="20dp"-->
-<!--        app:cardElevation="100dp"-->
-<!--        app:contentPadding="@dimen/cardview_default_elevation"-->
-<!--        tools:layout_editor_absoluteX="42dp"-->
-<!--        tools:layout_editor_absoluteY="-158dp">-->
-
+    android:layout_height="wrap_content">
 
     <ImageView
-        android:id="@+id/item_image"
+        android:id="@+id/item_novel_image"
         android:layout_width="wrap_content"
         android:layout_height="150dp"
         android:layout_marginBottom="5dp"
         android:scaleType="centerCrop"
         android:src="@drawable/book_clean"
-        app:layout_constraintBottom_toTopOf="@+id/item_name"
-        app:layout_constraintEnd_toEndOf="@+id/item_reviews"
+        app:layout_constraintBottom_toTopOf="@+id/item_novel_name"
+        app:layout_constraintEnd_toEndOf="@+id/item_novel_reviews"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="ContentDescription" />
 
     <TextView
-        android:id="@+id/item_name"
+        android:id="@+id/item_novel_name"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
+        android:layout_margin="10dp"
         android:maxLines="1"
         android:text="@string/clean_code"
         android:textColor="@color/black"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/item_reviews"
+        app:layout_constraintEnd_toEndOf="@+id/item_novel_image"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/item_image" />
+        app:layout_constraintTop_toBottomOf="@+id/item_novel_image" />
 
     <TextView
-        android:id="@+id/item_author"
+        android:id="@+id/item_novel_author"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:requiresFadingEdge="horizontal"
-        android:fadingEdgeLength="30dp"
+        android:layout_margin="10dp"
         android:ellipsize="none"
+        android:fadingEdgeLength="30dp"
+        android:requiresFadingEdge="horizontal"
         android:singleLine="true"
         android:text="@string/ahmed_kamal"
         android:textColor="@color/black"
         android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="@+id/item_reviews"
+        app:layout_constraintEnd_toEndOf="@+id/item_novel_image"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/item_name" />
+        app:layout_constraintTop_toBottomOf="@+id/item_novel_name" />
 
     <RatingBar
-        android:id="@+id/item_reviews"
+        android:id="@+id/item_novel_reviews"
         style="?android:attr/ratingBarStyleIndicator"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_gravity="start"
+        android:layout_margin="10dp"
         android:backgroundTint="@color/purple_200"
         android:focusable="false"
         android:max="5"
         android:numStars="5"
         android:progressTint="#ffff8800"
-        android:rating="1"
+        android:rating="4"
         android:secondaryProgressTint="@color/purple_200"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/item_author" />
-
-    <!--    </androidx.cardview.widget.CardView>-->
-
+        app:layout_constraintTop_toBottomOf="@+id/item_novel_author" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

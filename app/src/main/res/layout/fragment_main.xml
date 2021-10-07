@@ -7,8 +7,8 @@
     android:fitsSystemWindows="true"
     tools:context=".ui.MainViewModel.MainFragment">
 
-
     <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbarlauout"
         android:layout_width="match_parent"
         android:layout_height="240dp"
         android:fitsSystemWindows="true"
@@ -47,51 +47,72 @@
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.core.widget.NestedScrollView
-        android:id="@+id/nestedScrollView"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:clipToPadding="false"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/main_novel"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:padding="10dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/novel" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/main_Programming"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:padding="10dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/programming" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/main_SelfDevelopment"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:padding="10dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/self_development" />
+
+            </LinearLayout>
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:indeterminateTint="@color/design_default_color_primary"
+                android:visibility="gone" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/main_recyclerView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:padding="12dp"
                 android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:padding="3dp"
                 app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0"
-                tools:context="com.google.samples.apps.sunflower.GardenActivity"
-                tools:listitem="@layout/book_item"
-                tools:spanCount="2"
-                 />
+                app:spanCount="2"
+                tools:listitem="@layout/book_item" />
 
-
-
-            <ProgressBar
-                android:id="@+id/progressBar"
-                style="?android:attr/progressBarStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:indeterminateTint="@color/design_default_color_primary"
-                android:visibility="visible"
-                app:layout_constraintBottom_toTopOf="@+id/main_recyclerView"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.471"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0" />
-
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
     </androidx.core.widget.NestedScrollView>
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

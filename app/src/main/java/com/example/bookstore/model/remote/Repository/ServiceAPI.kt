@@ -7,7 +7,7 @@ import retrofit2.Response
 
 interface ServiceAPI {
 
-    suspend fun getAllBooks(): Response<List<BookShopItem>>
+    suspend fun getNovels(): Response<List<BookShopItem>>
 
 
     suspend fun getProfile(authorization: String): Response<User>

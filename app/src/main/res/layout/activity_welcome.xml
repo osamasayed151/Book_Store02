@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/welcome_Color"
     tools:context=".ui.Activities.WelcomeActivity">
+
 
     <fragment
         android:id="@+id/fragment2"
@@ -12,9 +14,11 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:defaultNavHost="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:navGraph="@navigation/book_nav_graph"
-        tools:layout_editor_absoluteX="236dp"
-        tools:layout_editor_absoluteY="307dp"
         tools:ignore="FragmentTagUsage" />
 
 

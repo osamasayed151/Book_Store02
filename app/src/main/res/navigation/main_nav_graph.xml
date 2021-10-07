@@ -8,13 +8,13 @@
         android:id="@+id/basketFragment"
         android:name="com.example.bookstore.ui.BasketFragment.BasketFragment"
         android:label="fragment_basket"
-        tools:layout="@layout/fragment_basket" >
+        tools:layout="@layout/fragment_basket">
 
         <action
             android:id="@+id/action_basketFragment_to_accountFragment"
             app:destination="@id/accountFragment"
             app:enterAnim="@android:anim/slide_out_right"
-            app:popEnterAnim="@android:anim/slide_in_left"/>
+            app:popEnterAnim="@android:anim/slide_in_left" />
     </fragment>
     <fragment
         android:id="@+id/accountFragment"
@@ -26,6 +26,17 @@
             app:destination="@id/detailsAccountFragment"
             app:enterAnim="@anim/nav_default_enter_anim"
             app:popEnterAnim="@anim/nav_default_pop_enter_anim" />
+        <action
+            android:id="@+id/action_accountFragment_to_loginFragment2"
+            app:destination="@id/loginFragment2" />
+        <action
+            android:id="@+id/action_accountFragment_to_myFavouriteFragment"
+            app:destination="@id/myFavouriteFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim" />
+        <action
+            android:id="@+id/action_accountFragment_to_aboutFragment"
+            app:destination="@id/aboutFragment" />
     </fragment>
     <fragment
         android:id="@+id/myFavouriteFragment"
@@ -43,6 +54,19 @@
             app:destination="@id/basketFragment"
             app:enterAnim="@android:anim/slide_out_right"
             app:popEnterAnim="@android:anim/slide_in_left" />
+        <action
+            android:id="@+id/action_mainFragment_to_programmingFragment"
+            app:destination="@id/programmingFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim" />
+        <action
+            android:id="@+id/action_mainFragment_to_novelFragment"
+            app:destination="@id/novelFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_selfDevelopmentFragment"
+            app:destination="@id/selfDevelopmentFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim" />
     </fragment>
     <fragment
         android:id="@+id/detailsAccountFragment"
@@ -53,4 +77,29 @@
             android:name="WHO"
             app:argType="string" />
     </fragment>
+    <fragment
+        android:id="@+id/loginFragment2"
+        android:name="com.example.bookstore.ui.LoginViewModel.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" />
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.example.bookstore.ui.AccountFragment.AboutFragment.AboutFragment"
+        android:label="fragment_about"
+        tools:layout="@layout/fragment_about" />
+    <fragment
+        android:id="@+id/novelFragment"
+        android:name="com.example.bookstore.ui.MainViewModel.NovelFragment.NovelFragment"
+        android:label="fragment_novel"
+        tools:layout="@layout/fragment_novel" />
+    <fragment
+        android:id="@+id/programmingFragment"
+        android:name="com.example.bookstore.ui.MainViewModel.ProgrammingFragment.ProgrammingFragment"
+        android:label="fragment_programming"
+        tools:layout="@layout/fragment_programming" />
+    <fragment
+        android:id="@+id/selfDevelopmentFragment"
+        android:name="com.example.bookstore.ui.MainViewModel.SelfDevelopmentFragment.SelfDevelopmentFragment"
+        android:label="fragment_self_development"
+        tools:layout="@layout/fragment_self_development" />
 </navigation>

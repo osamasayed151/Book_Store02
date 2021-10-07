@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="10dp"
+    android:visibility="visible"
     tools:context=".ui.AccountFragment.AccountFragment">
 
 
@@ -36,7 +37,7 @@
         app:backgroundTint="@color/white"
         app:borderWidth="1dp"
         app:elevation="6dp"
-        app:fabSize="mini"
+        app:fabCustomSize="50dp"
         app:layout_constraintBottom_toBottomOf="@+id/profile_image"
         app:layout_constraintEnd_toStartOf="@+id/Profile_name"
         app:layout_constraintStart_toStartOf="@+id/profile_image"
@@ -73,15 +74,15 @@
         app:layout_constraintTop_toBottomOf="@+id/Profile_Welcome" />
 
     <Button
-        android:id="@+id/Account"
+        android:id="@+id/profile_Account"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:drawableEnd="@drawable/ic_baseline_keyboard_arrow_right_24"
         android:gravity="start"
+        android:padding="15dp"
         android:text="@string/account_profile"
         android:textAllCaps="false"
-        android:padding="15dp"
         android:textColor="@color/black"
         android:textSize="18sp"
         app:backgroundTint="@color/white"
@@ -90,7 +91,7 @@
         app:layout_constraintTop_toBottomOf="@+id/profile_image" />
 
     <Button
-        android:id="@+id/account_Language"
+        android:id="@+id/profile_Language"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
@@ -98,24 +99,6 @@
         android:gravity="start"
         android:padding="15dp"
         android:text="@string/language_setting"
-        android:textColor="@color/black"
-        android:textSize="18sp"
-        android:textAllCaps="false"
-        app:backgroundTint="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.473"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Account" />
-
-    <Button
-        android:id="@+id/account_password"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:drawableEnd="@drawable/ic_baseline_keyboard_arrow_right_24"
-        android:gravity="start"
-        android:padding="15dp"
-        android:layout_marginTop="10dp"
-        android:text="@string/change_password"
         android:textAllCaps="false"
         android:textColor="@color/black"
         android:textSize="18sp"
@@ -123,11 +106,29 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.473"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/account_Language" />
+        app:layout_constraintTop_toBottomOf="@+id/profile_Account" />
+
+<!--    <Button-->
+<!--        android:id="@+id/profile_password"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        android:drawableEnd="@drawable/ic_baseline_keyboard_arrow_right_24"-->
+<!--        android:gravity="start"-->
+<!--        android:padding="15dp"-->
+<!--        android:text="@string/change_password"-->
+<!--        android:textAllCaps="false"-->
+<!--        android:textColor="@color/black"-->
+<!--        android:textSize="18sp"-->
+<!--        app:backgroundTint="@color/white"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.473"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/profile_Language" />-->
 
 
     <Button
-        android:id="@+id/account_Favourite"
+        android:id="@+id/profile_Favourite"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -142,10 +143,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.157"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/account_password" />
+        app:layout_constraintTop_toBottomOf="@+id/profile_Language" />
 
     <Button
-        android:id="@+id/account_About"
+        android:id="@+id/profile_About"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -159,10 +160,10 @@
         app:backgroundTint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/account_Favourite" />
+        app:layout_constraintTop_toBottomOf="@+id/profile_Favourite" />
 
     <Button
-        android:id="@+id/account_Logout"
+        android:id="@+id/profile_Logout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -176,6 +177,20 @@
         app:backgroundTint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/account_About" />
+        app:layout_constraintTop_toBottomOf="@+id/profile_About" />
+
+    <ProgressBar
+        android:id="@+id/profile_progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminateTint="@color/design_default_color_primary"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.537"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.183" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

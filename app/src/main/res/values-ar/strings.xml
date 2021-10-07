@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">متجر الكتب</string>
+
+    <string name="hello_blank_fragment">مرحبا</string>
+    <string name="title_activity_welecome">شاشة كامله</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="snackbar_action">Action.</string>
+    <string name="Home">الرئيسية</string>
+    <string name="Shop">تسوق</string>
+    <string name="Account">الحساب الشخصي</string>
+    <string name="Basket">سلة المشتريات</string>
+    <string name="email">البريد الالكتروني</string>
+    <string name="password">كلمة السر</string>
+    <string name="login">تسجيل دخول</string>
+    <string name="do_you_have_not_any_account">هل ليس لديك حساب؟</string>
+    <string name="registration">تسجيل دخول</string>
+    <string name="full_name">الاسم</string>
+    <string name="enter_your_email">ادخل بريدك الالكتروني</string>
+    <string name="enter_your_password">ادخل كلمة السر</string>
+    <string name="welcome">مرحبا!</string>
+    <string name="book_store">متجر الكتب</string>
+    <string name="clean_code">كود نظيف</string>
+    <string name="ahmed_kamal">احمد كمال</string>
+    <string name="enter_your_phone">ادخل رقم هاتفك</string>
+    <string name="cancel">إلغاء</string>
+    <string name="logout">تسجيل خروج</string>
+    <string name="about">عنا</string>
+    <string name="my_favourite">المفضلة</string>
+    <string name="change_password">تغيير كلمة السر</string>
+    <string name="language_setting">اعدادات اللغة</string>
+    <string name="account_profile">حسابك الشخصي</string>
+    <string name="osama_sayed">أسامه سيد</string>
+    <string name="welcome_back">اهلا وسهلا!</string>
+    <string name="update">تعديل</string>
+    <string name="choose">Choose</string>
+    <string name="arabic">Arabic</string>
+    <string name="english">English</string>
+</resources>
