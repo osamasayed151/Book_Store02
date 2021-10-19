@@ -1,4 +1,4 @@
-package com.example.bookstore.ui.MainViewModel.NovelFragment
+package com.example.bookstore.ui.MainFragment.NovelFragment.Adapter
 
 import android.view.LayoutInflater
 import android.view.View

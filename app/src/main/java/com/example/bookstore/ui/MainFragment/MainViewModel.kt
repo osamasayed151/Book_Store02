@@ -1,4 +1,4 @@
-package com.example.bookstore.ui.MainViewModel
+package com.example.bookstore.ui.MainFragment
 
 import android.app.Application
 import android.util.Log
@@ -17,6 +17,9 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     private var bookMutableLiveData = MutableLiveData<List<BookShopItem>>()
     val bookLiveData: LiveData<List<BookShopItem>> get() = bookMutableLiveData
 
+    private var bookIdMutableLiveData = MutableLiveData<BookShopItem>()
+    val bookIdLiveData: LiveData<BookShopItem> get() = bookIdMutableLiveData
+
     init {
         val service = RemoteBuilder.builderBooks().create(BookShopAPI::class.java)
         repository = RepositoryImp(service)
@@ -31,4 +34,12 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     }
 
 
+    fun getBookId(bookId: Int) = viewModelScope.launch {
+            val result = repository.getBookId(bookId)
+            if (result.body() != null && result.isSuccessful){
+                bookIdMutableLiveData.postValue(result.body())
+            }else{
+                Log.i(TAG, "getBookId: Error")
+            }
+        }
 }

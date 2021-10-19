@@ -1,4 +1,4 @@
-package com.example.bookstore.ui.MainViewModel
+package com.example.bookstore.ui.MainFragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,13 +9,11 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.bookstore.R
 import com.example.bookstore.databinding.FragmentMainBinding
 import com.example.bookstore.model.data.BookShopItem
-import com.example.bookstore.ui.Adapter.MainRecyclerView
-import com.example.bookstore.ui.Adapter.onBookClickListener
+import com.example.bookstore.ui.MainFragment.Adapter.MainRecyclerView
+import com.example.bookstore.ui.MainFragment.Adapter.onBookClickListener
 
 
 class MainFragment : Fragment(), onBookClickListener {
@@ -80,7 +78,7 @@ class MainFragment : Fragment(), onBookClickListener {
     }
 
     override fun onBookClick(book: BookShopItem) {
-        Toast.makeText(context, "the book name is ${book.title} ", Toast.LENGTH_SHORT).show()
-
+       val action = MainFragmentDirections.actionMainFragmentToShowItemFragment(book.id)
+        findNavController().navigate(action)
     }
 }

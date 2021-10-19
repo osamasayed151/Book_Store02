@@ -1,4 +1,4 @@
-package com.example.bookstore.ui.MainViewModel.NovelFragment
+package com.example.bookstore.ui.MainFragment.NovelFragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -11,6 +11,8 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.example.bookstore.R
 import com.example.bookstore.databinding.FragmentNovelBinding
 import com.example.bookstore.model.data.BookShopItem
+import com.example.bookstore.ui.MainFragment.NovelFragment.Adapter.NovelAdapter
+import com.example.bookstore.ui.MainFragment.NovelFragment.Adapter.onNovelCilckListener
 
 
 class NovelFragment : Fragment(), onNovelCilckListener {
@@ -43,6 +45,7 @@ class NovelFragment : Fragment(), onNovelCilckListener {
         novelViewModel.novelLiveData.observe(viewLifecycleOwner, {
             if (it != null) {
                 binding.NovelProgressBar.visibility = View.GONE
+                novelAdapter.setNovelData(it)
             } else {
                 binding.NovelProgressBar.visibility = View.GONE
                 Toast.makeText(context, "Error", Toast.LENGTH_SHORT).show()

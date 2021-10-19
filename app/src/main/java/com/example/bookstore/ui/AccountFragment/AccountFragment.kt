@@ -3,6 +3,7 @@ package com.example.bookstore.ui.AccountFragment
 import android.app.Activity
 import android.app.Dialog
 import android.content.Context
+import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
@@ -15,6 +16,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.bookstore.R
 import com.example.bookstore.databinding.FragmentAccountBinding
+import com.example.bookstore.ui.Activities.WelcomeActivity
 import com.github.dhaval2404.imagepicker.ImagePicker
 import com.google.android.material.snackbar.Snackbar
 import java.util.*
@@ -62,7 +64,7 @@ class AccountFragment : Fragment() {
             if (it != null && it.status) {
                 binding.profileProgressBar.visibility = View.GONE
                 Toast.makeText(context, it.message, Toast.LENGTH_SHORT).show()
-                findNavController().navigate(R.id.action_accountFragment_to_loginFragment2)
+                startActivity(Intent(context,WelcomeActivity::class.java))
             } else {
                 binding.profileProgressBar.visibility = View.GONE
                 Snackbar.make(binding.profileLogout, it.message, Snackbar.LENGTH_LONG).show()
@@ -106,14 +108,11 @@ class AccountFragment : Fragment() {
         arabicLayout.setOnClickListener {
             dialog.dismiss()
             setLanguage(requireActivity(), "ar")
-            // startActivity(new Intent(getActivity(),HomeFragment.class));
             startActivity((activity as AppCompatActivity?)!!.intent)
         }
         englishLayout.setOnClickListener {
             dialog.dismiss()
             setLanguage(requireActivity(), "en")
-            // startActivity(new Intent(getActivity(),HomeFragment.class));
-            // startActivity( ((AppCompatActivity)getActivity()).getIntent());
         }
         dialog.show()
         dialog.window!!.setLayout(

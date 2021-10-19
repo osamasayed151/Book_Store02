@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="5dp"
-    tools:context=".ui.MainViewModel.NovelFragment.NovelFragment">
+    tools:context=".ui.MainFragment.NovelFragment.NovelFragment">
 
 
     <androidx.recyclerview.widget.RecyclerView

@@ -1,7 +1,5 @@
-package com.example.bookstore.ui.Adapter
+package com.example.bookstore.ui.MainFragment.Adapter
 
-import android.media.Image
-import android.media.Rating
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup

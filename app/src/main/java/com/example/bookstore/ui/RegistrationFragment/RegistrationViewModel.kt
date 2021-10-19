@@ -1,8 +1,7 @@
-package com.example.bookstore.ui.RegistrationViewModel
+package com.example.bookstore.ui.RegistrationFragment
 
 import android.app.Application
 import android.util.Log
-import android.widget.Toast
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

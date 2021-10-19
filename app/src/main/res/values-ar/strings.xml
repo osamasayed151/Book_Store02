@@ -35,7 +35,13 @@
     <string name="osama_sayed">أسامه سيد</string>
     <string name="welcome_back">اهلا وسهلا!</string>
     <string name="update">تعديل</string>
-    <string name="choose">Choose</string>
-    <string name="arabic">Arabic</string>
-    <string name="english">English</string>
+    <string name="choose">اختار</string>
+    <string name="arabic">عربي</string>
+    <string name="english">انجليزي</string>
+    <string name="author">الكاتب</string>
+    <string name="title">العنوان: </string>
+    <string name="language">language</string>
+    <string name="pages">"pages: "</string>
+    <string name="department">department</string>
+    <string name="description">description</string>
 </resources>

@@ -1,4 +1,4 @@
-package com.example.bookstore.ui.RegistrationViewModel
+package com.example.bookstore.ui.RegistrationFragment
 
 import android.content.Context
 import android.content.Intent
@@ -13,7 +13,6 @@ import com.example.bookstore.R
 import com.example.bookstore.databinding.FragmentRegisterationBinding
 import com.example.bookstore.model.data.Data
 import com.example.bookstore.ui.Activities.MainActivity
-import com.example.bookstore.ui.LoginViewModel.LoginFragment
 import com.google.android.material.snackbar.Snackbar
 
 

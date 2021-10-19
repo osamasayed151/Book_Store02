@@ -16,6 +16,24 @@ class RepositoryImp(var api: BookShopAPI) : ServiceAPI {
         }
     }
 
+    override suspend fun getBookId(bookId: Int): Response<BookShopItem>{
+        return withContext(Dispatchers.IO){
+            api.getBookId(bookId)
+        }
+    }
+
+    override suspend fun getProgrammingBooks(): Response<List<BookShopItem>> {
+        return withContext(Dispatchers.IO){
+            api.getProgrammingBooks()
+        }
+    }
+
+    override suspend fun getSelfDevelopmentBooks(): Response<List<BookShopItem>> {
+       return withContext(Dispatchers.IO){
+            api.getSelfDevelopmentBooks()
+        }
+    }
+
     override suspend fun getProfile(authorization: String): Response<User> {
         return withContext(Dispatchers.IO){
             api.getProfile(authorization)

@@ -1,4 +1,4 @@
-package com.example.bookstore.ui.LoginViewModel
+package com.example.bookstore.ui.LoginFragment
 
 import android.app.Application
 import android.util.Log

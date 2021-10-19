@@ -1,4 +1,4 @@
-package com.example.bookstore.ui.MainViewModel.NovelFragment
+package com.example.bookstore.ui.MainFragment.NovelFragment.Adapter
 
 import com.example.bookstore.model.data.BookShopItem
 

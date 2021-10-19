@@ -13,6 +13,15 @@ interface BookShopAPI {
     @GET("Novels")
     suspend fun getNovels(): Response<List<BookShopItem>>
 
+    @GET("Novels/")
+    suspend fun getBookId(@Query("id") bookId: Int): Response<BookShopItem>
+
+    @GET("Programming")
+    suspend fun getProgrammingBooks(): Response<List<BookShopItem>>
+
+    @GET("Self-development")
+    suspend fun getSelfDevelopmentBooks(): Response<List<BookShopItem>>
+
     @GET("profile")
     suspend fun getProfile(@Header("Authorization") authorization: String): Response<User>
 

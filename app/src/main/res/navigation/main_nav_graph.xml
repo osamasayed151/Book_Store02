@@ -45,7 +45,7 @@
         tools:layout="@layout/fragment_my_favourite" />
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.example.bookstore.ui.MainViewModel.MainFragment"
+        android:name="com.example.bookstore.ui.MainFragment.MainFragment"
         android:label="fragment_main"
         tools:layout="@layout/fragment_main" >
 
@@ -67,6 +67,11 @@
             app:destination="@id/selfDevelopmentFragment"
             app:enterAnim="@anim/nav_default_enter_anim"
             app:popEnterAnim="@anim/nav_default_pop_enter_anim" />
+        <action
+            android:id="@+id/action_mainFragment_to_showItemFragment"
+            app:destination="@id/showItemFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim" />
     </fragment>
     <fragment
         android:id="@+id/detailsAccountFragment"
@@ -79,7 +84,7 @@
     </fragment>
     <fragment
         android:id="@+id/loginFragment2"
-        android:name="com.example.bookstore.ui.LoginViewModel.LoginFragment"
+        android:name="com.example.bookstore.ui.LoginFragment.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" />
     <fragment
@@ -89,17 +94,27 @@
         tools:layout="@layout/fragment_about" />
     <fragment
         android:id="@+id/novelFragment"
-        android:name="com.example.bookstore.ui.MainViewModel.NovelFragment.NovelFragment"
+        android:name="com.example.bookstore.ui.MainFragment.NovelFragment.NovelFragment"
         android:label="fragment_novel"
         tools:layout="@layout/fragment_novel" />
     <fragment
         android:id="@+id/programmingFragment"
-        android:name="com.example.bookstore.ui.MainViewModel.ProgrammingFragment.ProgrammingFragment"
+        android:name="com.example.bookstore.ui.MainFragment.ProgrammingFragment.ProgrammingFragment"
         android:label="fragment_programming"
         tools:layout="@layout/fragment_programming" />
     <fragment
         android:id="@+id/selfDevelopmentFragment"
-        android:name="com.example.bookstore.ui.MainViewModel.SelfDevelopmentFragment.SelfDevelopmentFragment"
+        android:name="com.example.bookstore.ui.MainFragment.SelfDevelopmentFragment.SelfDevelopmentFragment"
         android:label="fragment_self_development"
         tools:layout="@layout/fragment_self_development" />
+    <fragment
+        android:id="@+id/showItemFragment"
+        android:name="com.example.bookstore.ui.MainFragment.ShowItemFragment"
+        android:label="fragment_show_item"
+        tools:layout="@layout/fragment_show_item" >
+
+        <argument
+            android:name=" Book"
+            app:argType="string" />
+    </fragment>
 </navigation>

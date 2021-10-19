@@ -1,4 +1,4 @@
-package com.example.bookstore.ui.MainViewModel.NovelFragment
+package com.example.bookstore.ui.MainFragment.NovelFragment
 
 import android.app.Application
 import android.util.Log

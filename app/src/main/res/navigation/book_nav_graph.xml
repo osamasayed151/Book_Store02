@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.example.bookstore.ui.LoginViewModel.LoginFragment"
+        android:name="com.example.bookstore.ui.LoginFragment.LoginFragment"
         android:label="fragment Login"
         tools:layout="@layout/fragment_login">
 
@@ -21,7 +21,7 @@
 
     <fragment
         android:id="@+id/registeationFragment"
-        android:name="com.example.bookstore.ui.RegistrationViewModel.RegistrationFragment"
+        android:name="com.example.bookstore.ui.RegistrationFragment.RegistrationFragment"
         android:label="fragment_registeration"
         tools:layout="@layout/fragment_registeration">
         <action

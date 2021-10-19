@@ -2,23 +2,26 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/profiler_constraint_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.Activities.WelcomeActivity">
+    tools:layout_editor_absoluteY="81dp"
+    android:padding="10dp"
+    tools:context=".ui.FavouriteFragment.MyFavouriteFragment">
 
-
-    <fragment
-        android:id="@+id/fragment2"
-        android:name="androidx.navigation.fragment.NavHostFragment"
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:defaultNavHost="true"
+        android:layout_height="wrap_content"
+        android:text="My Favourite"
+        android:textSize="30sp"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:drawablePadding="10dp"
+        android:drawableTint="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:navGraph="@navigation/book_nav_graph"
-        tools:ignore="FragmentTagUsage" />
-
+        app:drawableEndCompat="@drawable/ic_favorite" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

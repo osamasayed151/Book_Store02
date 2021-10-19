@@ -36,4 +36,10 @@
     <string name="choose">Choose</string>
     <string name="arabic">Arabic</string>
     <string name="english">English</string>
+    <string name="author">author: </string>
+    <string name="title">title: </string>
+    <string name="language">language: </string>
+    <string name="pages">pages: </string>
+    <string name="department">department</string>
+    <string name="description">description: </string>
 </resources>
